@@ -1,0 +1,123 @@
+{
+  "metadata": {
+    "old_version": "1.0.0",
+    "new_version": "2.0.0",
+    "old_title": "User API",
+    "new_title": "User API",
+    "generated_at": "2026-05-07 11:07:16",
+    "total_changes": 8
+  },
+  "summary": {
+    "breaking": 2,
+    "potentially_breaking": 0,
+    "deprecated": 1,
+    "non_breaking": 1,
+    "enhancement": 4,
+    "total": 8
+  },
+  "changes": [
+    {
+      "change_type": "endpoint_removed",
+      "severity": "breaking",
+      "path": "POST /auth/login",
+      "description": "删除端点: POST /auth/login",
+      "old_value": {
+        "summary": "用户登录"
+      },
+      "new_value": null,
+      "suggestion": "⚠️ 破坏性变更！客户端必须停止使用此端点，寻找替代方案"
+    },
+    {
+      "change_type": "parameter_required_changed",
+      "severity": "breaking",
+      "path": "GET /users",
+      "description": "参数 'page' 变为必填",
+      "old_value": "optional",
+      "new_value": "required",
+      "suggestion": "⚠️ 破坏性变更！客户端必须确保提供此参数"
+    },
+    {
+      "change_type": "endpoint_modified",
+      "severity": "deprecated",
+      "path": "GET /users/{id}",
+      "description": "端点已弃用: GET /users/{id}",
+      "old_value": null,
+      "new_value": null,
+      "suggestion": "⚠️ 此端点已被弃用，请尽快迁移到替代方案"
+    },
+    {
+      "change_type": "parameter_added",
+      "severity": "non_breaking",
+      "path": "GET /users",
+      "description": "新增参数 'sort'",
+      "old_value": null,
+      "new_value": {
+        "name": "sort",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        },
+        "required": false
+      },
+      "suggestion": "新增参数（可选）"
+    },
+    {
+      "change_type": "endpoint_added",
+      "severity": "enhancement",
+      "path": "GET /users/{id}/profile",
+      "description": "新增端点: GET /users/{id}/profile",
+      "old_value": null,
+      "new_value": {
+        "summary": "获取用户资料",
+        "tags": []
+      },
+      "suggestion": "这是一个新端点，客户端可以考虑使用它来实现新功能"
+    },
+    {
+      "change_type": "response_field_added",
+      "severity": "enhancement",
+      "path": "GET /users",
+      "description": "响应字段新增: 'page'",
+      "old_value": null,
+      "new_value": null,
+      "suggestion": "客户端可以利用此新字段获取更多信息"
+    },
+    {
+      "change_type": "security_scheme_changed",
+      "severity": "enhancement",
+      "path": "security",
+      "description": "新增安全方案: 'apiKey'",
+      "old_value": null,
+      "new_value": null,
+      "suggestion": "客户端可以使用新的认证方式"
+    },
+    {
+      "change_type": "endpoint_added",
+      "severity": "enhancement",
+      "path": "schemas/Profile",
+      "description": "新增Schema定义: 'Profile'",
+      "old_value": null,
+      "new_value": null,
+      "suggestion": "新的数据模型定义可用"
+    }
+  ],
+  "migration_guide": {
+    "breaking_changes": [
+      {
+        "path": "POST /auth/login",
+        "suggestion": "⚠️ 破坏性变更！客户端必须停止使用此端点，寻找替代方案"
+      },
+      {
+        "path": "GET /users",
+        "suggestion": "⚠️ 破坏性变更！客户端必须确保提供此参数"
+      }
+    ],
+    "deprecated_features": [
+      {
+        "path": "GET /users/{id}",
+        "suggestion": "⚠️ 此端点已被弃用，请尽快迁移到替代方案"
+      }
+    ],
+    "safe_to_upgrade": false
+  }
+}

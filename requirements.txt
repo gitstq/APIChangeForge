@@ -1,0 +1,8 @@
+# APIChangeForge - 零依赖项目
+# 本工具仅使用Python标准库，无需安装额外依赖
+# Python 3.8+ 即可运行
+
+# 可选依赖（仅用于开发测试）
+# pytest>=7.0.0
+# black>=22.0.0
+# flake8>=4.0.0

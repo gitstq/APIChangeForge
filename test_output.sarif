@@ -1,0 +1,145 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "APIChangeForge",
+          "version": "1.0.0",
+          "informationUri": "https://github.com/yourusername/APIChangeForge"
+        }
+      },
+      "results": [
+        {
+          "ruleId": "endpoint_removed",
+          "level": "error",
+          "message": {
+            "text": "删除端点: POST /auth/login"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "POST /auth/login"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "parameter_required_changed",
+          "level": "error",
+          "message": {
+            "text": "参数 'page' 变为必填"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "GET /users"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "endpoint_modified",
+          "level": "warning",
+          "message": {
+            "text": "端点已弃用: GET /users/{id}"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "GET /users/{id}"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "parameter_added",
+          "level": "warning",
+          "message": {
+            "text": "新增参数 'sort'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "GET /users"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "endpoint_added",
+          "level": "warning",
+          "message": {
+            "text": "新增端点: GET /users/{id}/profile"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "GET /users/{id}/profile"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "response_field_added",
+          "level": "warning",
+          "message": {
+            "text": "响应字段新增: 'page'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "GET /users"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "security_scheme_changed",
+          "level": "warning",
+          "message": {
+            "text": "新增安全方案: 'apiKey'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "security"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "endpoint_added",
+          "level": "warning",
+          "message": {
+            "text": "新增Schema定义: 'Profile'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "schemas/Profile"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
